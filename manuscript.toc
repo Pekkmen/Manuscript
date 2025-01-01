@@ -1,0 +1,19 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{Ábrák jegyzéke}{5}{chapter*.2}%
+\contentsline {section}{Feladatkiírás}{6}{chapter*.3}%
+\contentsline {section}{Opis práce}{7}{chapter*.4}%
+\contentsline {section}{Abstrakt}{8}{chapter*.5}%
+\contentsline {section}{Absztrakt}{9}{chapter*.6}%
+\contentsline {section}{Abstract}{10}{chapter*.7}%
+\contentsline {chapter}{Bevezetés}{11}{chapter*.8}%
+\contentsline {chapter}{\numberline {1}Elméleti rész}{12}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Alfejezet}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Mégegy alfejezet}{13}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Al-alfejezet}{13}{subsection.1.2.1}%
+\contentsline {paragraph}{Nevesített paragrafus.}{13}{paragraph*.9}%
+\contentsline {subsection}{\numberline {1.2.2}Így szedjük helyesen a C${}^{\#}$\ nyelvet}{14}{subsection.1.2.2}%
+\contentsline {chapter}{\numberline {2}Gyakorlati rész}{15}{chapter.2}%
+\contentsline {chapter}{Befejezés}{16}{chapter*.10}%
+\contentsline {chapter}{Resumé}{17}{chapter*.11}%
+\contentsline {chapter}{Hivatkozások}{17}{chapter*.11}%
+\contentsfinish 
