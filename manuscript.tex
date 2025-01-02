@@ -1,5 +1,5 @@
-%\documentclass[a4paper,oneside,onecolumn,12pt]{LegrandOrangeBook}
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,oneside,onecolumn,12pt]{LegrandOrangeBook}
+%\documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \def\magyarOptions{chapterhead=unchanged}
@@ -30,6 +30,9 @@
 % printed ISBN
 \usepackage[SC5b,ISBN=000-00-000-0000-0]{ean13isbn}
 
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{manuscript.bib} %Import the bibliography file
+
 
 \newcommand{\blankpage}{%
     \newpage
@@ -42,35 +45,35 @@
 \newcommand{\commentaron}[1]{{\textcolor{blue}{#1}}}
 
 % Book information for PDF metadata, remove/comment this block if not required 
-% \hypersetup{
-% 	pdftitle={Real-time stock market price data analysis using neural networks}, % Title field
-% 	pdfauthor={Bc. Eugen Fekete}, % Author field
-% 	pdfsubject={Diplomamunka}, % Subject field
-% 	pdfkeywords={key1, key2, key3, key4}, % Keywords
-% 	pdfcreator={LaTeX}, % Content creator field
-% }
+\hypersetup{
+	pdftitle={Real-time stock market price data analysis using neural networks}, % Title field
+	pdfauthor={Bc. Eugen Fekete}, % Author field
+	pdfsubject={Diplomamunka}, % Subject field
+	pdfkeywords={key1, key2, key3, key4}, % Keywords
+	pdfcreator={LaTeX}, % Content creator field
+}
 
-% \definecolor{ocre}{RGB}{243, 102, 25} % Define the color used for highlighting throughout the book
+\definecolor{ocre}{RGB}{243, 102, 25} % Define the color used for highlighting throughout the book
 
-% \chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
-% \chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapterspaceabove{6.5cm} % Default whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{6.75cm} % Default amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
-% \onehalfspacing
-% %\doublespacing
-% \frenchspacing
+\onehalfspacing
+%\doublespacing
+\frenchspacing
 
-% \hypersetup{
-%     colorlinks=true,
-%     linkcolor=blue,
-%     filecolor=magenta,      
-%     urlcolor=cyan,
-%     pdftitle={Real-time stock market price data analysis using neural networks} }
-% \urlstyle{same}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Real-time stock market price data analysis using neural networks} }
+\urlstyle{same}
 
-% %% \usepackage[backend=biber, style=numeric-comp, sorting=none,]{biblatex}
-% %% \PassOptionsToPackage{sorting=none,language=english}{biblatex}
-% \ExecuteBibliographyOptions{sorting=none}
-% \addbibresource{manuscript.bib}
+%% \usepackage[backend=biber, style=numeric-comp, sorting=none,]{biblatex}
+%% \PassOptionsToPackage{sorting=none,language=english}{biblatex}
+\ExecuteBibliographyOptions{sorting=none}
+\addbibresource{manuscript.bib}
 \begin{document}
 
 %%% Borító
@@ -118,8 +121,6 @@
 		Tanulmányi szak:     & Informatika\\
 		Školiteľ:            & László Marák, PhD.\\
 		Témavezető:          & László Marák, PhD.\\
-		Konzultant:          & László Marák, PhD. \\
-		Konzulens:           & László Marák, PhD.\\
 		Školiace pracovisko: & Katedra informatiky\\
 		Tanszék megnevezése: & Informatikai Tanszék\\
 	\end{tabular}
@@ -145,14 +146,14 @@ Ide jön az aláírt témakiírás
 \pagebreak
 
 \newcommand{\chpt}[1]{\chapter*{#1}\addcontentsline{toc}{section}{#1}}
-\chapterimage{kep/header.png} % Chapter heading image
+% \chapterimage{kep/header.png} % Chapter heading image
 
 \chpt{Feladatkiírás}
 % \addcontentsline{toc}{chapter}{Feladatkiírás}
 
 A szerző egy feladatot oldott meg. Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb,  
 
-%\chapterimage{kep/header2.png} % Chapter heading image
+% \chapterimage{kep/header2.png} % Chapter heading image
 \chpt{Opis práce}
 % \addcontentsline{toc}{chapter}{Opis práce}
 
@@ -189,28 +190,28 @@ Little longer, Little longer, Little longer, Little longer, Little longer, Littl
 \chapter*{Bevezetés}
 \addcontentsline{toc}{chapter}{Bevezetés}
 \markboth{}{\sffamily\normalsize{Bevezetés}}
-\begin{eBox}
-    Fontos megjegyzés, vagy állítás
-\end{eBox}
+% \begin{eBox}
+%     Fontos megjegyzés, vagy állítás
+% \end{eBox}
 % \commentaron{szürke háttérrel kicsit fura nekem}\comment{válassz tetszőleges hátteret}
 
-\begin{figure}
-  \begin{tBox}
-    \centering{\LARGE{\url{https://google.com/}}}
-  \end{tBox}
-  \caption{Felirat}\label{fig:link}
-\end{figure}  
+% \begin{figure}
+%   \begin{tBox}
+%     \centering{\LARGE{\url{https://google.com/}}}
+%   \end{tBox}
+%   \caption{Felirat}\label{fig:link}
+% \end{figure}  
 
-Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
+Machine learning plays a pivotal role in many areas of modern sciences, whether in industry, healthcare, finance or other fields. It can be used to provide a better service for the users of a search engine, a social media site or a media service provider by learning from the behaviour of the average user, predict stock prices within a specific time interval based on company performance measures and economic data, identify the risk factors for certain health conditions derived from clinical and demographic variables, identify the characters in a handwritten address from a digitized image, and so on. \cite{TESL}
 
-\chapterimage{kep/header2.png} % Chapter heading image
+% \chapterimage{kep/header2.png} % Chapter heading image
 \chapter{Elméleti rész}
 
-Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
+Lorem ipsum dolores
 
-\section{Alfejezet}
+\section{Machine Learning}
 
-Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
+
 
 \section{Mégegy alfejezet}
 
@@ -251,12 +252,12 @@ Beilleszteni egy képet így kell: A képre mindig kell hivatkozni a szövegből
 
 \subsection{Így szedjük helyesen a \CS\ nyelvet}
 
-\chapterimage{kep/header2.png} % Chapter heading image
+% \chapterimage{kep/header2.png} % Chapter heading image
 \chapter{Gyakorlati rész}
 
 Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb\footnote{lábjegyzet}, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
 
-\chapterimage{kep/header.png} % Chapter heading image
+% \chapterimage{kep/header.png} % Chapter heading image
 \chapter*{Befejezés}
 \addcontentsline{toc}{chapter}{Befejezés}
 
@@ -264,7 +265,7 @@ Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, m�
 
 
 \pagebreak
-\chapterimage{kep/header3.png} % Chapter heading image
+% \chapterimage{kep/header3.png} % Chapter heading image
 \chapter*{Resumé}
 \addcontentsline{toc}{chapter}{Resumé}
 \markboth{}{\sffamily\normalsize{Resumé}}

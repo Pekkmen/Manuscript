@@ -3,5 +3,6 @@
 *.toc
 *.aux
 *.bcf
-*.bib
 *.idx
+*.bbl
+*.blg
