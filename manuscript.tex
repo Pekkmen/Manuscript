@@ -30,10 +30,6 @@
 % printed ISBN
 \usepackage[SC5b,ISBN=000-00-000-0000-0]{ean13isbn}
 
-\usepackage{biblatex} %Imports biblatex package
-\addbibresource{manuscript.bib} %Import the bibliography file
-
-
 \newcommand{\blankpage}{%
     \newpage
     \thispagestyle{empty}
@@ -72,8 +68,9 @@
 
 %% \usepackage[backend=biber, style=numeric-comp, sorting=none,]{biblatex}
 %% \PassOptionsToPackage{sorting=none,language=english}{biblatex}
-\ExecuteBibliographyOptions{sorting=none}
+\ExecuteBibliographyOptions{sorting=nyt}
 \addbibresource{manuscript.bib}
+
 \begin{document}
 
 %%% Borító
@@ -187,9 +184,9 @@ Little longer, Little longer, Little longer, Little longer, Little longer, Littl
 
 \pagebreak
 
-\chapter*{Bevezetés}
-\addcontentsline{toc}{chapter}{Bevezetés}
-\markboth{}{\sffamily\normalsize{Bevezetés}}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{}{\sffamily\normalsize{Introduction}}
 % \begin{eBox}
 %     Fontos megjegyzés, vagy állítás
 % \end{eBox}
@@ -202,7 +199,8 @@ Little longer, Little longer, Little longer, Little longer, Little longer, Littl
 %   \caption{Felirat}\label{fig:link}
 % \end{figure}  
 
-Machine learning plays a pivotal role in many areas of modern sciences, whether in industry, healthcare, finance or other fields. It can be used to provide a better service for the users of a search engine, a social media site or a media service provider by learning from the behaviour of the average user, predict stock prices within a specific time interval based on company performance measures and economic data, identify the risk factors for certain health conditions derived from clinical and demographic variables, identify the characters in a handwritten address from a digitized image, and so on. \cite{TESL}
+Machine learning (ML) plays a pivotal role in many areas of modern sciences, whether in industry, healthcare, finance and other fields. It can be used to provide a better service for the users of a search engine, a social media site or a media service provider by learning from the behaviour of the average user, predict stock prices within a specific time interval based on company performance measures and economic data, identify the risk factors for certain health conditions derived from clinical and demographic variables, identify the characters in a handwritten address from a digitized image, and so on. \cite{TESL}\\
+The main objective of ML is to find rules or patterns in data to achieve certain goals. In the financial world, for example, this might involve extracting useful information from the available data to support or automate investment activities. These activities include observing the market and placing buy or sell orders based on the conclusions drawn. \cite{MLAT}
 
 % \chapterimage{kep/header2.png} % Chapter heading image
 \chapter{Elméleti rész}
@@ -211,8 +209,13 @@ Lorem ipsum dolores
 
 \section{Machine Learning}
 
-
-
+The more common way of making a computer do work is to execute a computer program created by a human programmer. This program contains the steps and rules that turn input data into the appropriate answers, called output data. Machine learning mixes up these steps: the machine examines the input and output data, and tries to figure out what the rules should be. A system working like this is said to be trained rather than programmed. It is during the training process that the system identifies these rules by learning the patterns and relationships in the available data. \cite{DLP}\\
+Learning can be described using the definition provided by the renowned computer scientist and machine learning researcher, Tom Michael Mitchell:
+\begin{quote}
+	A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.\cite{ML}
+\end{quote}
+As an example, a text recognition program, a so called Optical Character Recognition (OCR) software can be presented. The main goal of such a program is to correctly recognize and convert handwritten characters into digitized text. A collection of texts written in different styles is presented to the OCR software. This collection, which the system uses to learn, is called the training set, where each instance is labeled appropriately. The actual machine learning part of the software that learns and makes predictions is called the model. In this example, the task T is to recognize handwritten characters and correctly classify them, the experience E is the training set provided for learning and the performance measure P could be the accuracy of the recognition.\\
+The example mentioned described a ML system performing supervised learning and solving a classification problem. We talk about supervised learning when a training set with appropriately labeled data is available for the learning process. Two other well known types of learning are unsupervised learning, where no training set with labeled data is available, and reinforcement learning, where a software agent learns rules by interacting with its environment. A classification problem is a problem where each input can be sorted into discrete number of classes. In the previous example each letter in a text can be classified as one of the letters of the alphabet. If we want to predict land prices, we don't expect labels as outputs, so we can't speak of classification problems. This is known as a regression problem and we expect continuous numerical values as outputs, for which a regression algorithm is used.
 \section{Mégegy alfejezet}
 
 felsorolás
@@ -274,8 +277,8 @@ Autor vyrešil úlohu, ešte trošku dlhšie, ešte trošku dlhšie, ešte troš
 
 % \input{gitlog.tex}
 
-\printbibliography[title=Hivatkozások] % Output book bibliography entries
-\addcontentsline{toc}{chapter}{Hivatkozások}
+\printbibliography[title=References] % Output book bibliography entries
+\addcontentsline{toc}{chapter}{References}
 \pagebreak
 \thispagestyle{empty}
 \mbox{}
