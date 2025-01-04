@@ -23,6 +23,7 @@
 % \usepackage{wrapfig}
 % \usepackage{csquotes}
 \usepackage{ragged2e}
+\usepackage{float} % For anchoring table locations
 
 % electronic ISBN
 %\usepackage[SC5b,ISBN=000-00-000-0000-0]{ean13isbn}
@@ -204,18 +205,50 @@ The main objective of ML is to find rules or patterns in data to achieve certain
 
 % \chapterimage{kep/header2.png} % Chapter heading image
 \chapter{Elméleti rész}
-
 Lorem ipsum dolores
 
-\section{Machine Learning}
+	\section{Machine Learning}
+	The more common way of making a computer do work is to execute a computer program created by a human programmer. This program contains the steps and rules that turn input data into the appropriate answers, called output data. Machine learning mixes up these steps: the machine examines the input and output data, and tries to figure out what the rules should be. A system working like this is said to be trained rather than programmed. It is during the training process that the system identifies these rules by learning the patterns and relationships in the available data. \cite{DLP}\\
+	Learning can be described using the definition provided by the renowned computer scientist and machine learning researcher, Tom Michael Mitchell:
+	\begin{quote}
+		"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E." (Tom M. Mitchell, 1997, p. 2)\cite{ML}
+	\end{quote}
+	As an example, a text recognition program, a so called Optical Character Recognition (OCR) software can be presented. The main goal of such a program is to correctly recognize and convert handwritten characters into digitized text. A collection of texts written in various styles is presented to the OCR software. This collection, which the system uses to learn, is called the training set, where each instance is labeled appropriately. The actual machine learning part of the software that learns and makes predictions is called the model. In this example, the task T is to recognize handwritten characters and correctly classify them, the experience E is the training set provided for learning and the performance measure P could be the accuracy of the recognition.\\
+	The example mentioned described a ML system performing supervised learning and solving a classification problem. We talk about supervised learning when a training set with appropriately labeled data is available for the learning process. Two other well known types of learning are unsupervised learning, where no training set with labeled data is available, and reinforcement learning, where a software agent learns rules by interacting with its environment. A classification problem is a problem where each input can be sorted into discrete number of classes. In the previous example each letter in a text can be classified as one of the letters of the alphabet. In contrast, when predicting land prices, we do not expect discrete labels as outputs, so we can't speak of classification problems. This is known as a regression problem and we expect continuous numerical values as outputs, for which a regression algorithm is used.
 
-The more common way of making a computer do work is to execute a computer program created by a human programmer. This program contains the steps and rules that turn input data into the appropriate answers, called output data. Machine learning mixes up these steps: the machine examines the input and output data, and tries to figure out what the rules should be. A system working like this is said to be trained rather than programmed. It is during the training process that the system identifies these rules by learning the patterns and relationships in the available data. \cite{DLP}\\
-Learning can be described using the definition provided by the renowned computer scientist and machine learning researcher, Tom Michael Mitchell:
-\begin{quote}
-	A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.\cite{ML}
-\end{quote}
-As an example, a text recognition program, a so called Optical Character Recognition (OCR) software can be presented. The main goal of such a program is to correctly recognize and convert handwritten characters into digitized text. A collection of texts written in different styles is presented to the OCR software. This collection, which the system uses to learn, is called the training set, where each instance is labeled appropriately. The actual machine learning part of the software that learns and makes predictions is called the model. In this example, the task T is to recognize handwritten characters and correctly classify them, the experience E is the training set provided for learning and the performance measure P could be the accuracy of the recognition.\\
-The example mentioned described a ML system performing supervised learning and solving a classification problem. We talk about supervised learning when a training set with appropriately labeled data is available for the learning process. Two other well known types of learning are unsupervised learning, where no training set with labeled data is available, and reinforcement learning, where a software agent learns rules by interacting with its environment. A classification problem is a problem where each input can be sorted into discrete number of classes. In the previous example each letter in a text can be classified as one of the letters of the alphabet. If we want to predict land prices, we don't expect labels as outputs, so we can't speak of classification problems. This is known as a regression problem and we expect continuous numerical values as outputs, for which a regression algorithm is used.
+		\subsection{The learning process}
+		Machine learning systems can be grouped based on the type and amount of supervision received during the training. The most common types of learning are:
+		\begin{itemize}[noitemsep]
+			\item Supervised learning
+			\item Unsupervised learning
+			\item Reinforcement learning
+		\end{itemize}
+		\cite{HMLSKT}
+			
+			\subsubsection{Supervised learning}
+			For supervised learning a training set is available. The training set consists of numerous observations with predefined inputs and a corresponding output. The inputs are called predictors (also called features) and the output is referred to as the response. The observations represents individual data instances. \cite{TESL}\\
+			As an example lets say we want to predict house prices and we have the following training set:\\
+			\begin{table}[H]
+			\begin{center}
+			\begin{tabular}{|c|c|c||c|}
+				\hline
+				\textbf{Size ($m^2$)} & \textbf{Number of rooms} & \textbf{Location} & \textbf{Price (€)}\\
+				\hline
+				250 & 4 & Bratislava & 412000\\
+				\hline
+				390 & 6 & Komárno & 186000\\
+				\hline
+				180 & 4 & Košice & 375000\\
+				\hline
+				\multicolumn{4}{|c|}{\cdots} \\
+				\hline
+			\end{tabular}
+			\end{center}
+			\caption{Example training set with arbitrary values}
+			\end{table}
+			In Table 1.1 each row corresponds to a single house for sale. These houses are the observations and each column (excluding the last column) of the table, which represents the attributes of the houses, is a predictor. The last column is the output or the response.\\
+			
+
 \section{Mégegy alfejezet}
 
 felsorolás
