@@ -216,7 +216,7 @@ Lorem ipsum dolores
 	As an example, a text recognition program, a so called Optical Character Recognition (OCR) software can be presented. The main goal of such a program is to correctly recognize and convert handwritten characters into digitized text. A collection of texts written in various styles is presented to the OCR software. This collection, which the system uses to learn, is called the training set, where each instance is labeled appropriately. The actual machine learning part of the software that learns and makes predictions is called the model. In this example, the task T is to recognize handwritten characters and correctly classify them, the experience E is the training set provided for learning and the performance measure P could be the accuracy of the recognition.\\
 	The example mentioned described a ML system performing supervised learning and solving a classification problem. We talk about supervised learning when a training set with appropriately labeled data is available for the learning process. Two other well known types of learning are unsupervised learning, where no training set with labeled data is available, and reinforcement learning, where a software agent learns rules by interacting with its environment. A classification problem is a problem where each input can be sorted into discrete number of classes. In the previous example each letter in a text can be classified as one of the letters of the alphabet. In contrast, when predicting land prices, we do not expect discrete labels as outputs, so we can't speak of classification problems. This is known as a regression problem and we expect continuous numerical values as outputs, for which a regression algorithm is used.
 
-		\subsection{The learning process}
+		\subsection{Types of learning}
 		Machine learning systems can be grouped based on the type and amount of supervision received during the training. The most common types of learning are:
 		\begin{itemize}[noitemsep]
 			\item Supervised learning
@@ -251,13 +251,32 @@ Lorem ipsum dolores
 			In Table 1.1 each row corresponds to a single house for sale. These houses are the observations and each column (excluding the last column) of the table, which represents the attributes of the houses, is an input, or a predictor. The last column is the output or the response.\\
 			The variables (be that predictor or response) can be described as either quantitative or qualitative. Quantitative variables are numerical values, like the size, number of rooms and price of a house in Table 1.1. Qualitative variables take values in one of $K$ different categories, like the type of housing in Table 1.1. Problems with a quantitative response are referred to as regression problems, while problems with qualitative a response are referred to as classification problems. \cite{AISL}\\
 			For each predictor measurement vector $x_i$ (where $i = 1, ..., n$), there is a corresponding response measurement $y_i$. The goal of learning is to fit a model that links the response to the predictors, either to predict the response for future observations or to gain a deeper understanding of the relationship between the response and the predictors. \cite{AISL}\\
-			CONTINUE: EXPLAIN THE FITTING METHOD USED IN THE FINISHED PROGRAM OR OTHER COMMON METHODS\\
+
+			\textbf{Algorithms}\\
+			CONTINUE: EXPLAIN THE FITTING METHOD USED IN THE FINISHED PROGRAM OR OTHER COMMON METHODS IN DEPTH\\
 
 			\subsubsection{Unsupervised learning}
-			If we only have a set of unlabeled measurement vectors $x_i$ (where $i = 1, ..., n$) with no corresponding $y_i$ response, we talk about unsupervised learning. Since we don't have an associated response, the goal of unsupervised learning is not to make predictions, but rather to analyze and discover patterns in the available data, which often makes working with unsupervised learning algorithms subjective. Furthermore, the lack of a corresponding response makes evaluating the obtained results difficult, as there is no way to check our work without knowing the true answer. This method of learning is often used as part of an exploratory data analysis. For example, a researcher might analyze gene expression levels in patients with certain health conditions to identify relationships or subgroups among the genes. A webstore could perform sales analyses to identify groups of customers with similar purchase histories for targeted advertisements and service customization. Similarly, a search engine might customize search results for users based on the click histories of other users with similar search patterns. \cite{AISL} \\
-			For applications like these, where groups of objects or persons are identified, clustering algorithms are used. Another frequently used method in unsupervised learning is data visualization, which transforms complex, unlabeled data into a format suitable for plotting or further analysis. A related task is dimensionality reduction, where the aim is to simplify data with minimal information loss by performing feature extraction and merging correlated features. Anomaly detection algorithms can be used to detect fraudulent actions or to remove outliers from datasets during preprocessing. \cite{HMLSKT}
+			If we only have a set of unlabeled measurement vectors $x_i$ (where $i = 1, ..., n$) with no corresponding $y_i$ response, we talk about unsupervised learning. Since we don't have an associated response, the goal of unsupervised learning is not to make predictions, but rather to analyze and discover patterns in the available data, which makes often makes working with unsupervised learning algorithms subjective. Furthermore, the lack of a corresponding response makes evaluating the obtained results difficult, as there is no way to check our work without knowing the true answer. This method of learning is often used as part of an exploratory data analysis. For example, a researcher might analyze gene expression levels in patients with certain health conditions to identify relationships or subgroups among the genes. A webstore could perform sales analyses to identify groups of customers with similar purchase histories for targeted advertisements and service customization. Similarly, a search engine might customize search results for users based on the click histories of other users with similar search patterns. \cite{AISL} \\
+			For applications like these, where groups of objects or persons are identified, clustering algorithms are used. Another frequently used method in unsupervised learning is data visualization, which transforms complex, unlabeled data into a format suitable for plotting or further analysis. A related task is dimensionality reduction, where the aim is to simplify data with minimal information loss by performing feature extraction and merging correlated features. Anomaly detection algorithms can be used to detect fraudulent actions or to remove outliers from datasets during preprocessing. \cite{HMLSKT}\\
+
+			\textbf{Algorithms}\\
+			CONTINUE: EXPLAIN COMMON ALGORITHMS MORE IN DEPTH\\
 
 			\subsubsection{Reinforcement learning}
+			In reinforcement learning, a virtual object called an agent can make observation of its environment, commit actions resulting in rewards or penalties (usually defined as negative rewards) based on the outcome. \cite{HMLSKT}\\ 
+			In reinforcement learning, the goal is to figure out a strategy (called a policy) that tells the agent what actions to take in different situations, in order to get the most reward over time. The policy can either be deterministic, where the the agent always picks the same action for a given situation, or stochastic, where the action is chosen based on chance, according to a probability distribution. The agent needs to learn how actions and rewards are connected, which means it needs to explore the policy space. Policy space refers to the set of all possible policies that an agent can adopt. \cite{RLRAS}\\
+			More precisely, this policy could be a neural network, which takes observations as inputs and outputs the resulting action. Alternatively, the policy could be a genetic algorithm, where each generation consists of multiple policies and new generations of policy offsprings are created based on the genetic algorithm used. Reinforcement learning is commonly used in robotics and smart home appliances like thermostats. We can also find financial securities trading support systems using reinforcement learning. \cite{HMLSKT}\\
+			https://neptune.ai/blog/7-applications-of-reinforcement-learning-in-finance-and-trading\\
+			https://github.com/pskrunner14/trading-bot\\
+			https://github.com/selimamrouni/Deep-Portfolio-Management-Reinforcement-Learning\\
+			https://github.com/doncat99/StockRecommendSystem\\ 
+			\textbf{Algorithms}\\
+			CONTINUE: EXPLAIN COMMON ALGORITHMS MORE IN DEPTH\\
+
+
+		\subsection{Neural networks}
+
+
 \section{Mégegy alfejezet}
 
 felsorolás
