@@ -276,7 +276,7 @@ Lorem ipsum dolores\\
 			Financial Portfolio Management Problem". The paper describes the development of a system capable of automating portfolio management. Portfolio management is defined as the action of continuous reallocation of a capital into a number of financial assets. The core of the system is the Ensemble of Identical Independent Evaluators (EIIE) topology.  In an EIIE, there are multiple evaluators (models or algorithms), following the same structure or design, but each working independently examining an asset's historical data to predict future growth. The outputs of their individual evaluations are aggregated to make a final decision. The resulting scores from this evaluation are used to determine the portfolio weights for the next trading period. These weights represent the actions the agent will take. If an asset's weight increases, it'll be bought or if it goes down, it'll be sold. The portfolio weights from the last period are fed back into the EIIE for future predictions.\\
 			Three different types of evaluators were tested in this work, a Convolutional Neural Network (CNN), a Recurrent Neural Network (RNN) and a Long Short Term Memory (LSTM) architecture. The framework was evaluated on a cryptocurrency exchange market in three different time period (to ensure that the tests cover different market conditions, like fast- or slow-moving market), each lasting 30 minutes. The tests included benchmarks, such as Best Stock (selects and invests in a single asset that achieved the highest final adjusted portfolio value), Uniform Buy and Hold (divides the initial capital equally among assets and holds them without rebalancing or trading), Uniform Constant
 			Rebalanced Portfolio (divides the initial capital equally among assets and constantly rebalances the portfolio). Additionally, well-known strategies, such as ”Follow-the-Winner”, ”Follow-the-Loser”, ”Pattern-Matching”, and ”Meta-Learning” were also tested.\\
-			At the beginning of each period, the trading agent reallocates the fund among the assets. The trading fee for certain actions on the site is calculated as the maximum possible percentage, which is 0.25\%. theframework was tested on historical data only with ideal conditions: zero slippage (meaning trade is executed immediately when an order is placed) and zero market impact (so the value of the trade is too insignificant to influence the market). For the portfolio preallocation the 11 most-volumed assets were selected. For training, historic price data from the past two days were used. The optimal policy was obtained using gradient ascent algorithm.\\
+			At the beginning of each period, the trading agent reallocates the fund among the assets. The trading fee for certain actions on the site is calculated as the maximum possible percentage, which is 0.25\%. Theframework was tested on historical data only with ideal conditions: zero slippage (meaning the trade is executed immediately when an order is placed) and zero market impact (so the value of the trade is too insignificant to influence the market). For the portfolio preallocation the 11 most-volumed assets were selected. For training, historic price data from the past two days were used. The optimal policy was obtained using gradient ascent algorithm.\\
 			\textbf{Algorithms}\\
 			CONTINUE: EXPLAIN COMMON ALGORITHMS MORE IN DEPTH\\
 
@@ -284,51 +284,15 @@ Lorem ipsum dolores\\
 		\subsection{Neural networks}
 
 
-\section{Mégegy alfejezet}
-
-felsorolás
-
-\begin{itemize}
-    \item LLE - {\it low-level} emuláció - alacsony szintű emulátorok %- ciklus pontosság
-    \item HLE - {\it high-level} emuláció - magas szintű emulátorok %- absztrakciók
-\end{itemize}
-
-
-\subsection{Al-alfejezet}
-
-Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb\footnote{lábjegyzet}, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
-
-felsorolás
-\begin{itemize}
-    \item minden függvény-blokk atomikus, vagyis mindig lefut az elejétől a végéig, és nem szakad meg soha
-    \item a függvény-blokkban nincsenek elágazások
-    \item minden függvény-blokknak van egy maximum nagysága
-\end{itemize}
-
-
-Monospace betűtípus \texttt{fetch}, \texttt{decode} és \texttt{execute}
-
-\paragraph{Nevesített paragrafus.} A {\it dőlt}  idézet~\cite{Ubershaders:ARidiculous}.
-
-Beilleszteni egy képet így kell: A képre mindig kell hivatkozni a szövegből!!!
-
-\begin{figure}[ht]
-    \centering
-    \includesvg[scale=0.13,inkscapelatex=false]{./kep/utasitas-abra.svg}
-	\caption{Utasítás felépítése}
-	\label{fig:Utasítás felépítése}
-\end{figure}
-
-\newcommand{\CS}{C${}^{\#}$}
-
-\subsection{Így szedjük helyesen a \CS\ nyelvet}
-
-% \chapterimage{kep/header2.png} % Chapter heading image
 \chapter{Gyakorlati rész}
+\section{MATLAB\textsuperscript{\textcopyright}}
+MATLAB is a numeric computing environment that provides a wide range of tools and utilities, including a programming language, an integrated development environment (IDE) for code editing, interactive apps, and specialized libraries for solving domain-specific problems such as image processing, control system design, and data analysis. With its built-in functions and pre-made algorithms, MATLAB is widely used by engineers and researchers to design, develop, and operate complex systems across various industries. Applications include, but are not limited to, but not limited to autonomous vehicles, aircraft, marine vehicles, spacecraft, semiconductor design, wireless communication systems and manufacturing optimization. \cite{WhatIsMATLAB}\\
+MATLAB offers another product called Simulink, which provides tools for Model-Based Systems Engineering (MBSE). Simulink enables developers to design, simulate, and deploy systems following a model-based architecture. It is primarily used to virtually simulate systems before physical testing or hardware deployment, evaluate system designs and compose control architectures. \cite{WhatIsSimulink} Simulink is also utilized for creating machine learning systems through reinforcement learning. Using this package, intelligent agents can be trained via the standard trial-and-error interactions with dynamic environments. \cite{SimulinkAI}\\
+MATLAB is not a free product but offers various license types with different pricing, including a free license for students at partner institutions. \cite{MATLABPricing} Due to its extensive tools and libraries, as well as the availability of the free student license, we chose MATLAB as the platform for developing the program for this thesis.\\
 
-Még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb\footnote{lábjegyzet}, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hosszabb, még egy kicsit hossz
+\section{IBKR API}
 
-% \chapterimage{kep/header.png} % Chapter heading image
+
 \chapter*{Befejezés}
 \addcontentsline{toc}{chapter}{Befejezés}
 
@@ -348,11 +312,5 @@ Autor vyrešil úlohu, ešte trošku dlhšie, ešte trošku dlhšie, ešte troš
 \printbibliography[title=References] % Output book bibliography entries
 \addcontentsline{toc}{chapter}{References}
 \pagebreak
-\thispagestyle{empty}
-\mbox{}
-\vfill
-\begin{Center}
-\mbox{\vskip1cm}\EANisbn
-\end{Center}
 
 \end{document}
