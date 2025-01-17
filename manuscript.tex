@@ -292,10 +292,37 @@ MATLAB is not a free product but offers various license types with different pri
 
 \section{The data}
 The Trader Workstation (TWS) is an online platform created by Interactive Brokers (IBKR) that traders and investors use to trade stocks, bonds, futures, and more across over 150 markets worldwide via its graphical user interface. \cite{TW} TWS also offers a non-graphical API designed for fast-paced, data-sensitive, and complex programmatic trading. This API can handle thousands of market data streams simultaneously while allowing users to execute trades. \cite{IBKRAPI}.\\ 
-Using this API, various types of data can be collected, including "Top Market Data" (Level 1) and "Market Depth" data (Level 2). Level 1 data includes the best bid and ask prices, along with the number of shares that traders are trying to buy or sell. It essentially represents the top of the limit order book for both sides. \cite{IL1} Level 2 data expands the information provided by Level 1 by adding the market depth, typically showing about 5-10 additional price levels. This type of data includes not only the best bid and ask prices but also some of the subsequent lines in the limit order book. \cite{IL2}\\
-!!!!!!!!!!!!REFACTOR THIS PARAGRAPH!!!!!!!!!!:Generally, there are two common methods for collecting order book data: the user can either request full snapshots of the limit order book (LOB) or receive updates through streams of messages. The latter offers a more optimized approach, as repeatedly requesting full snapshots in a liquid market would impose a high computational load due to the large number of changes occurring every second. To mitigate this, snapshots are returned at discrete time intervals. However, the downside is that between snapshots, it is impossible to track the changes, significantly reducing the available information. \cite{TLOB} A subset of the IBKR API, known as the TWS API, allows the collection of market depth data from the LOB as streams of messages, with each message including the order's ID, date, type, price, and size. \cite{TWS_API_MD}\\
-EXPLAIN THE STRUCTURE AND MEANING OF OUR DATA\\
-PIC OF DATA?\\
+Using this API, various types of data can be collected, including "Top Market Data" (Level 1) and "Market Depth" data (Level 2) for a selected instrument's limit order book. Level 1 data includes the best bid and ask prices, along with the number of shares that traders are trying to buy or sell. It essentially represents the top of the limit order book for both sides. \cite{IL1} Level 2 data expands the information provided by Level 1 by adding the market depth, typically showing about 5-10 additional price levels. This type of data includes not only the best bid and ask prices but also some of the subsequent lines in the limit order book. \cite{IL2}\\
+Generally, there are two common methods for collecting order book data: the user can either request full snapshots of the limit order book (LOB) or receive updates through streams of messages. The latter offers a more optimized approach, as repeatedly requesting full snapshots in a liquid market would impose a high computational load due to the large number of changes occurring every second. To mitigate this, snapshots are returned at discrete time intervals. However, the downside is that between snapshots, it is impossible to track the changes, significantly reducing the available information. \cite{TLOB}\\
+A subset of the IBKR API, known as the TWS API, enables the collection of market depth data from the LOB as streams of messages, with each message including the order's ID, date, type, price, and size. \cite{TWS_API_MD}\ These messages were collected by László Marák, PhD, the supervisor of this thesis, using the IBKR API, starting in early 2020. The messages are organized and stored in a MySQL database. For LOB reconstruction, we use two tables from this database: \textit{reqMktDepth} and \textit{updateMktDepthL2}. The latter contains the limit order book message streams, while \textit{reqMktDepth} stores the tickerID-instrument symbol pairs needed to identify which message belongs to which stock.\\
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\linewidth]{kep/updateMktDepthL2.png}
+	\caption{Structure of the \textit{updateMktDepthL2} table, showing only the first 10 rows.}
+\end{center}
+\end{figure}
+
+In Figure 2.1, we can observe the structure of the messages. The meaning of each column is as follows:
+\begin{enumerate}[noitemsep]
+	\item \textit{tickerID} = Identifies a limit order book in a given request. 
+	\item \textit{timestamp} = Shows the time the message was received. 
+	\item \textit{position} = Indicates the position where the update should be performed in the order book (starting at index 0). 
+	\item \textit{operation} = Specifies the operation to be performed. Three types of operations are possible: insert, update, and delete, each coded numerically starting from 0 to 2 respectively. 
+	\item \textit{side} = Specifies the side of the limit order book where the operation should be performed. The sides are coded numerically: 0 is the ask book, 1 is the bid book. 
+	\item \textit{price} = Indicates the value of the given order. 
+	\item \textit{size} = Refers to the quantity of the stock being traded. 
+\end{enumerate}
+
+As already mentioned, the \textit{tickerID} identifies the limit order book, and each \textit{tickerID} is paired with a stock symbol. However, this \textit{tickerID} is not constant for the symbols, it changes with each request. To properly identify the limit order books, the previously mentioned \textit{reqMktDepth} table is required.\\
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.75]{kep/reqMktDepth.png}
+	\caption{Structure of the \textit{reqMktDepth} table, showing only the first 10 rows.}
+\end{center}
+\end{figure}
+
+Figure 2.2 shows the simple structure of the \textit{reqMktDepth} table, which consists of two columns: the first column stores the \textit{tickerID}, and the second column displays the symbol pair associated with the \textit{tickerID}s. Using this table, we can determine that the first two messages, as well as the third and fourth messages from the back of the table shown in Figure 2.1, belong to the symbol \textit{BA}, which represents The Boeing Company on the stock market.\\
 
 \section{LOB reconstruction}
 
