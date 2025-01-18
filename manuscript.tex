@@ -132,13 +132,27 @@
 \endgroup
 {
 \hspace*{-2cm}
-%\includegraphics[keepaspectratio, width=17cm]{./zadanie-zp_17422.pdf}
+\pagebreak
+
 Ide jön az aláírt témakiírás
 \pagebreak
 }
-\tableofcontents %% opcionális
+
+\chapter*{Statutory Declaration}
+TEMPLATE\\
+I hereby declare that this thesis has been composed by myself autonomously and that no means other than those declared
+were used. In every single case, I have marked parts that were taken out of published or unpublished work, either verbatim or in a paraphrased manner, as such through a quotation.
 \pagebreak
-\listoffigures  %% opcionális
+
+\chapter*{Acknowledgement}
+TEMPLATE\\
+Thank you everyone.
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\listoffigures
 \addcontentsline{toc}{section}{Ábrák jegyzéke}
 
 \pagebreak
@@ -269,7 +283,16 @@ Lorem ipsum dolores\\
 			More precisely, this policy could be a neural network, which takes observations as inputs and outputs the resulting action. Alternatively, the policy could be a genetic algorithm, where each generation consists of multiple policies and new generations of policy offsprings are created based on the genetic algorithm used. Reinforcement learning is commonly used in robotics and smart home appliances like thermostats. We can also find financial securities trading support systems using reinforcement learning. \cite{HMLSKT}\\
 			\textbf{Stock Trading Bot using Deep Q-Learning} \cite{STBDQ}\\
 			A good example of a common approach in algorithmic trading can be illustrated by the "Stock Trading Bot using Deep Q-Learning" project created by Prabhsimran Singh. This project demonstrates an automatic stock trading bot using Deep Q-Learning, a type of reinforcement learning algorithm utilizing a deep neural network to approximate the optimal action-value function (also known as Q-function), which determines the best action to take in a given state. \cite{HCTDRL}. At any moment, the agent observes its current state (an n-day window of stock prices, which shows the stock prices of the last n days), selects and performs a buy/hold/sell action. The next state is evaluated and the agent receives a reward accordingly, based on changes in the portfolio value. The agent then updates its parameters by minimizing the computed loss. In reinforcement learning loss refers to the differnece between the target Q-value and the predicted Q-value, with the Q-value defining the optimal state-action (quality) values \cite{HMLSKT}. \\
-			TEST RESULTS FROM THE CODE COMES HERE.\\
+			Since the project is open-source and published under the MIT license, anyone can analyze and run the code. The pretrained models included in the repository were trained on Google stock using historical data from 2010. For personal testing, the provided historical Google stock data from 2019 was used.\\
+			The simulation starts with a portfolio worth \$1050 in January. By late December, the portfolio's value increased to \$1359.34, generating a gross profit of \$309.34. This is a gross profit because the simulation does not account for fees required to execute the trades. The evolution of the portfolio's value is visualized using a script included in the repository.\\
+			\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=\linewidth]{kep/trade_bot_visualization.png}
+				\caption{The evolution of portfolio value using a pretrained trading bot.}
+			\end{center}
+			\end{figure}
+			Looking at Figure 1.1, we can see that the algorithm tends to sell when the price increases and buy when the price decreases.\\
+
 			\textbf{A Deep Reinforcement Learning Framework for the
 			Financial Portfolio Management Problem} \cite{ADRLFFPMP}\\
 			Another example of the use of reinforcement learning in the financial world is presented in the paper of Zhengyao Jiang, Dixing Xu and Jinjun Liang, titled "A Deep Reinforcement Learning Framework for the
